@@ -1,0 +1,4 @@
+#Fri Nov 26 11:12:51 CET 2021
+base.0=C\:\\Users\\Lenovo\\Downloads\\FlutterBankApp-master\\FlutterBankApp-master\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+renamed.0=classes.dex
+path.0=classes.dex
