@@ -63,7 +63,7 @@ class _SignupPage extends State<SignupPage> {
     return Form(
       key: _formKey,
       child: Scaffold(
-        resizeToAvoidBottomInset: false,
+        resizeToAvoidBottomInset: true,
         backgroundColor: Colors.black,
         appBar: AppBar(
           backgroundColor: Colors.black,
@@ -125,11 +125,11 @@ class _SignupPage extends State<SignupPage> {
                     FadeAnimation(
                         1.2,
                         MakeInput('Votre Nom', false, nameInputValidator,
-                            _firstnameController)),
+                            _firstnameController, "Votre Nom de Famille")),
                     FadeAnimation(
                         1.2,
                         MakeInput('Votre Prénom', false, nameInputValidator,
-                            _lastnameController)),
+                            _lastnameController, "Votre Nom")),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -149,16 +149,16 @@ class _SignupPage extends State<SignupPage> {
                     ),
                     FadeAnimation(
                         1.2,
-                        TextField(
-                          inputFormatters: [
-                            MultiMaskedTextInputFormatter(
-                                masks: ['xx.xx.xx', 'xx.xx.xxxx'],
-                                separator: '.')
-                          ],
-                          style: TextStyle(color: Colors.white),
-                          autofocus: true,
-                          keyboardType: TextInputType.number,
-                          decoration: InputDecoration(
+                        TextFormField(
+                            validator: nameInputValidator,
+                            inputFormatters: [
+                              MultiMaskedTextInputFormatter(
+                                  masks: ['xx/xx/xx', 'xx/xx/xxxx'],
+                                  separator: '/')
+                            ],
+                            style: TextStyle(color: Colors.white),
+                            keyboardType: TextInputType.number,
+                            decoration: InputDecoration(
                               contentPadding: EdgeInsets.symmetric(
                                   vertical: 0, horizontal: 12),
                               enabledBorder: OutlineInputBorder(
@@ -171,15 +171,21 @@ class _SignupPage extends State<SignupPage> {
                                 borderSide: BorderSide(
                                     color: Colors.purple[800], width: 2.0),
                               ),
-                              hintText: '20.02.99 or 20.02.1999'),
-                        )),
+                              hintText: "Format: 31/12/1997",
+                              hintStyle:
+                                  TextStyle(fontSize: 15.0, color: Colors.grey),
+                            ))),
                     SizedBox(
                       height: 25,
                     ),
                     FadeAnimation(
                       1.2,
-                      MakeInput("Votre adresse mail", false,
-                          emailInputValidator, _emailController),
+                      MakeInput(
+                          "Votre adresse mail",
+                          false,
+                          emailInputValidator,
+                          _emailController,
+                          "Format: Foulen@Domaine.com"),
                     ),
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -215,6 +221,9 @@ class _SignupPage extends State<SignupPage> {
                             },
                             style: TextStyle(color: Colors.white),
                             decoration: InputDecoration(
+                                hintText: "Mot de passe de 8 caracteres",
+                                hintStyle: TextStyle(
+                                    fontSize: 15.0, color: Colors.grey),
                                 contentPadding: EdgeInsets.symmetric(
                                     vertical: 0, horizontal: 12),
                                 enabledBorder: OutlineInputBorder(
@@ -265,6 +274,9 @@ class _SignupPage extends State<SignupPage> {
                             },
                             style: TextStyle(color: Colors.white),
                             decoration: InputDecoration(
+                                hintText: "Confimer le même mot de passe",
+                                hintStyle: TextStyle(
+                                    fontSize: 15.0, color: Colors.grey),
                                 contentPadding: EdgeInsets.symmetric(
                                     vertical: 0, horizontal: 12),
                                 enabledBorder: OutlineInputBorder(
@@ -282,8 +294,12 @@ class _SignupPage extends State<SignupPage> {
                     ),
                     FadeAnimation(
                         1.2,
-                        MakeInput('Tapez le numéro de votre carte VISA', false,
-                            cardLengthValidator, _carteNumController)),
+                        MakeInput(
+                            'Tapez le numéro de votre carte VISA',
+                            false,
+                            cardLengthValidator,
+                            _carteNumController,
+                            "Format: VISA:42XX XXXX XXXX XXXX")),
                     SizedBox(
                       height: 5,
                     ),
@@ -308,13 +324,20 @@ class _SignupPage extends State<SignupPage> {
                     FadeAnimation(
                       1.2,
                       DropdownButtonFormField(
+                        validator: (value) {
+                          if (value == null) {
+                            return 'Ce champ est obligatoire';
+                          }
+                        },
                         style: TextStyle(
                             fontSize: 15,
                             fontWeight: FontWeight.w400,
                             color: Colors.white),
                         dropdownColor: Colors.black,
                         decoration: new InputDecoration(
-                            //
+                            hintText: "Profession",
+                            hintStyle:
+                                TextStyle(fontSize: 15.0, color: Colors.grey),
                             contentPadding: EdgeInsets.symmetric(
                                 vertical: 0, horizontal: 12),
                             enabledBorder: OutlineInputBorder(
@@ -456,7 +479,7 @@ class _SignupPage extends State<SignupPage> {
     );
   }
 
-  Widget MakeInput(label, obscureText, validator, controller) {
+  Widget MakeInput(label, obscureText, validator, controller, hint) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
@@ -473,6 +496,8 @@ class _SignupPage extends State<SignupPage> {
             controller: controller,
             style: TextStyle(color: Colors.white),
             decoration: InputDecoration(
+                hintText: hint,
+                hintStyle: TextStyle(fontSize: 15.0, color: Colors.grey),
                 contentPadding:
                     EdgeInsets.symmetric(vertical: 0, horizontal: 12),
                 enabledBorder: OutlineInputBorder(

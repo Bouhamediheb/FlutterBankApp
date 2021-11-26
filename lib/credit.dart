@@ -1,7 +1,5 @@
 // ignore_for_file: missing_return, camel_case_types
 
-import 'package:bank_app_ihebbouhamed/main.dart';
-import 'package:bank_app_ihebbouhamed/resultat.dart';
 import 'package:bank_app_ihebbouhamed/succes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -22,10 +20,10 @@ List creditList = [
   "Crédit Consommation",
 ];
 
-final salaire = TextEditingController()..text = '0';
-final valeurAcq = TextEditingController()..text = '0';
-final valeurApport = TextEditingController()..text = '0';
-final moisRembours = TextEditingController()..text = '0';
+final salaire = TextEditingController()..text;
+final valeurAcq = TextEditingController()..text;
+final valeurApport = TextEditingController()..text;
+final moisRembours = TextEditingController()..text;
 //final typeCreditChoisis = TextEditingController()..text = '0';
 double sal = double.parse(salaire.text);
 double result;
@@ -41,7 +39,7 @@ double calculCredit(salaire, valeurAcq, valeurApport, moisRembours) {
 double test = calculCredit(salaire, valeurAcq, valeurApport, moisRembours);
 
 String nameInputValidator(value) {
-  if (value == null || value.isEmpty) {
+  if (value == null || value.isEmpty || value == '0') {
     return 'Ce champ est obligatoire';
   }
 }
@@ -52,7 +50,7 @@ class _creditPageState extends State<creditPage> {
     return Form(
         key: _formKey,
         child: Scaffold(
-            resizeToAvoidBottomInset: false,
+            resizeToAvoidBottomInset: true,
             backgroundColor: Colors.black,
             appBar: AppBar(
               backgroundColor: Colors.black,
@@ -96,7 +94,7 @@ class _creditPageState extends State<creditPage> {
                         FadeAnimation(
                             1.2,
                             Text(
-                              "Bienvenue a ce simulateur qui \nva vous aider à faire une simulation d'un emprunt à la banque.\nVeuillez remplir ces champs afin de voir si vous êtes éligible à ce crédit.",
+                              "Pour être eligible a un crédit , il faut que la mensualité soit supérieur à 30% \nde votre salaire net. \n Réglement De Finance Tunisien.",
                               textAlign: TextAlign.center,
                               style: TextStyle(
                                 fontSize: 15,
@@ -144,6 +142,9 @@ class _creditPageState extends State<creditPage> {
                                 ],
                                 style: TextStyle(color: Colors.white),
                                 decoration: InputDecoration(
+                                    hintText: "Votre salaire en DT",
+                                    hintStyle: TextStyle(
+                                        fontSize: 15.0, color: Colors.grey),
                                     contentPadding: EdgeInsets.symmetric(
                                         vertical: 0, horizontal: 12),
                                     enabledBorder: OutlineInputBorder(
@@ -182,13 +183,20 @@ class _creditPageState extends State<creditPage> {
                           FadeAnimation(
                             1.2,
                             DropdownButtonFormField(
+                              validator: (value) {
+                                if (value == null) {
+                                  return 'Ce champ est obligatoire';
+                                }
+                              },
                               style: TextStyle(
                                   fontSize: 15,
                                   fontWeight: FontWeight.w400,
                                   color: Colors.white),
                               dropdownColor: Colors.black,
                               decoration: new InputDecoration(
-                                  //
+                                  hintText: "Types de crédit disponibles",
+                                  hintStyle: TextStyle(
+                                      fontSize: 15.0, color: Colors.grey),
                                   contentPadding: EdgeInsets.symmetric(
                                       vertical: 0, horizontal: 12),
                                   enabledBorder: OutlineInputBorder(
@@ -251,6 +259,9 @@ class _creditPageState extends State<creditPage> {
                                 ],
                                 style: TextStyle(color: Colors.white),
                                 decoration: InputDecoration(
+                                    hintText: "Durée en Mois - 12 Mois = 1 An",
+                                    hintStyle: TextStyle(
+                                        fontSize: 15.0, color: Colors.grey),
                                     contentPadding: EdgeInsets.symmetric(
                                         vertical: 0, horizontal: 12),
                                     enabledBorder: OutlineInputBorder(
@@ -303,6 +314,9 @@ class _creditPageState extends State<creditPage> {
                                 ],
                                 style: TextStyle(color: Colors.white),
                                 decoration: InputDecoration(
+                                    hintText: "Montant du crédit en DT",
+                                    hintStyle: TextStyle(
+                                        fontSize: 15.0, color: Colors.grey),
                                     contentPadding: EdgeInsets.symmetric(
                                         vertical: 0, horizontal: 12),
                                     enabledBorder: OutlineInputBorder(
@@ -355,6 +369,9 @@ class _creditPageState extends State<creditPage> {
                                 ],
                                 style: TextStyle(color: Colors.white),
                                 decoration: InputDecoration(
+                                    hintText: "Votre apport propre en DT",
+                                    hintStyle: TextStyle(
+                                        fontSize: 15.0, color: Colors.grey),
                                     contentPadding: EdgeInsets.symmetric(
                                         vertical: 0, horizontal: 12),
                                     enabledBorder: OutlineInputBorder(

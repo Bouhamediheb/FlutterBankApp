@@ -1,4 +1,5 @@
-import 'package:bank_app_ihebbouhamed/main.dart';
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
 import 'animation/FadeAnimation.dart';
 

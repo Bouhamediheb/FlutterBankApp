@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:bank_app_ihebbouhamed/dashboard.dart';
 import 'package:flutter/material.dart';
 import 'animation/FadeAnimation.dart';
@@ -51,7 +53,7 @@ class LoginPage extends StatelessWidget {
                       FadeAnimation(
                           1.2,
                           Text(
-                            "Entrez vos cordonnées",
+                            "C'est une page de Test",
                             style: TextStyle(
                                 fontSize: 15, color: Colors.grey[700]),
                           )),
@@ -61,11 +63,13 @@ class LoginPage extends StatelessWidget {
                     padding: EdgeInsets.symmetric(horizontal: 40),
                     child: Column(
                       children: <Widget>[
-                        FadeAnimation(1.2, makeInput(label: "Adresse e-Mail")),
+                        FadeAnimation(
+                            1.2, makeInput(label: "Votre Adresse Email")),
                         FadeAnimation(
                             1.3,
                             makeInput(
-                                label: "Mot de passe", obscureText: true)),
+                                label: "Votre Mot de passe",
+                                obscureText: true)),
                       ],
                     ),
                   ),
@@ -91,9 +95,9 @@ class LoginPage extends StatelessWidget {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) => DashboardPage(
-                                          "Iheb",
-                                          "Iheb",
-                                          "1999999999",
+                                          "Admin",
+                                          "Admin",
+                                          "42424242424242",
                                           "Docteur")));
                             },
                             color: Colors.purple[800],

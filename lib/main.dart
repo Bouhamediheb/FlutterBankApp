@@ -48,7 +48,7 @@ class HomePage extends StatelessWidget {
                   FadeAnimation(
                       1.2,
                       Text(
-                        "Bienvenue a mon simulateur de crédit. Application de BOUHAMED Iheb , réalisée dans le cadre d'un projet pour la matiére développement mobile.",
+                        "Bienvenue a mon simulateur de crédit. Application de BOUHAMED Iheb.\nRéalisée dans le cadre d'un projet pour la matiére développement mobile.",
                         textAlign: TextAlign.center,
                         style: TextStyle(color: Colors.grey[700], fontSize: 15),
                       )),
@@ -60,7 +60,7 @@ class HomePage extends StatelessWidget {
                     height: MediaQuery.of(context).size.height / 3,
                     decoration: BoxDecoration(
                         image: DecorationImage(
-                            image: AssetImage('assets/bank.png'))),
+                            image: AssetImage('assets/bankillustest2.png'))),
                   )),
               Column(
                 children: <Widget>[

@@ -52,7 +52,16 @@ class succesPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 SizedBox(
-                  height: 300,
+                  height: 120,
+                ),
+                FadeAnimation(
+                    1.1,
+                    Image.asset(
+                      "assets/okay.png",
+                      cacheWidth: 120,
+                    )),
+                SizedBox(
+                  height: 25,
                 ),
                 FadeAnimation(
                     1.2,
@@ -70,7 +79,7 @@ class succesPage extends StatelessWidget {
                 FadeAnimation(
                     1.2,
                     Text(
-                      "Votre Salaire : $salaire",
+                      "Votre Salaire : $salaire" + " DT",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 15,
@@ -83,7 +92,7 @@ class succesPage extends StatelessWidget {
                 FadeAnimation(
                     1.2,
                     Text(
-                      "Le montant du crédit : $valeurAcq",
+                      "Le montant du crédit : $valeurAcq" + " DT",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 15,
@@ -96,7 +105,7 @@ class succesPage extends StatelessWidget {
                 FadeAnimation(
                     1.2,
                     Text(
-                      "Le montant de votre apport : $valeurApport",
+                      "Le montant de votre apport : $valeurApport" + " DT",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 15,
@@ -135,7 +144,7 @@ class succesPage extends StatelessWidget {
                 FadeAnimation(
                     1.2,
                     Text(
-                      "Le montant à rembourser DT/Mois : ${calculCredit(salaire, valeurAcq, valeurApport, moisRembours).toString()}",
+                      "Le montant à rembourser DT/Mois : ${calculCredit(salaire, valeurAcq, valeurApport, moisRembours).toStringAsFixed(3)}",
                       textAlign: TextAlign.center,
                       style: TextStyle(
                         fontSize: 15,
