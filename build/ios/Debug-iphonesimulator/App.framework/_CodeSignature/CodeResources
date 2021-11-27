@@ -10,7 +10,7 @@
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		hCc5z+ze7uqnHXKgoRIJ79rF8mo=
+		0W466Kzmu2lNB5ZKPx7v5rJZvVU=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -64,6 +64,10 @@
 		<data>
 		y84KY4pc0Qqx7lDnjF9UQNTgyIw=
 		</data>
+		<key>flutter_assets/assets/down.png</key>
+		<data>
+		V/2/uD5IKQAUo2/BH1xptzSJe48=
+		</data>
 		<key>flutter_assets/assets/exchange.png</key>
 		<data>
 		Fbv3D8XXQDGXmo1FM33CqCwfI2Q=
@@ -75,6 +79,10 @@
 		<key>flutter_assets/assets/logo-sicar-equity5.jpg</key>
 		<data>
 		lm5epsT+EcmUSY5g/+ad5uynkcU=
+		</data>
+		<key>flutter_assets/assets/okay.png</key>
+		<data>
+		PB4SLM0j4/zbSXKqkV/UbIdeAjo=
 		</data>
 		<key>flutter_assets/assets/payroll.png</key>
 		<data>
@@ -110,7 +118,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		AVkcmbFBhIeJmXLszatj1/O6OC8=
+		xErBQxZyjRACaYESWJSWlf82Ykc=
 		</data>
 		<key>flutter_assets/packages/awesome_card/fonts/MavenPro-Bold.ttf</key>
 		<data>
@@ -203,11 +211,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			hCc5z+ze7uqnHXKgoRIJ79rF8mo=
+			0W466Kzmu2lNB5ZKPx7v5rJZvVU=
 			</data>
 			<key>hash2</key>
 			<data>
-			NOufQYhBrzt6eQKbfjtOC9i5meaaLdpogQwbD5MsUpA=
+			YLqvgQ9J79N+gUHruDpiXKGf1IJ24KA5Vp/3Z37Hdco=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -342,6 +350,17 @@
 			SjaZsk4JgW16NhFungE0gAGd9PnRbUUjWuYjqI9g8os=
 			</data>
 		</dict>
+		<key>flutter_assets/assets/down.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			V/2/uD5IKQAUo2/BH1xptzSJe48=
+			</data>
+			<key>hash2</key>
+			<data>
+			wqpRiP0MbFy34UelAWK0xGVtDet3ua8NjTgD/gT5Dqo=
+			</data>
+		</dict>
 		<key>flutter_assets/assets/exchange.png</key>
 		<dict>
 			<key>hash</key>
@@ -373,6 +392,17 @@
 			<key>hash2</key>
 			<data>
 			BZzaA53XbAYKIxoc64OsYn574tHrPLINzp7i2bsE8gE=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/okay.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			PB4SLM0j4/zbSXKqkV/UbIdeAjo=
+			</data>
+			<key>hash2</key>
+			<data>
+			jHGWbNPrOpk8N2Q0adix2KCMxQpr2kIaq39Re2VbKPM=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/payroll.png</key>
@@ -467,11 +497,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			AVkcmbFBhIeJmXLszatj1/O6OC8=
+			xErBQxZyjRACaYESWJSWlf82Ykc=
 			</data>
 			<key>hash2</key>
 			<data>
-			eD2x9wOhGPosmd5MQltd7n9Cd4BmY9waqwcXLjUoSFM=
+			hzhOdv09NfE00mO0hNEZy7EntwlReeE7E2wZnPgWPbM=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/awesome_card/fonts/MavenPro-Bold.ttf</key>
